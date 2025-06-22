@@ -20,10 +20,3 @@ with sync_playwright() as playwright:
     expect(wrong_email_or_password_alert).to_be_visible()
     expect(wrong_email_or_password_alert).to_have_text('Wrong email or password')
 
-    page.wait_for_timeout(5000)
-
-
-    # user.name@gmail.com Login Password "Wrong email or password"
-    #//div[@data-testid="login-form-email-input"]//div//input -- XPath локатор для поля почты
-    # //div[@data-testid="login-form-password-input"]//div//input -- XPath локатор для поля пароля
-    # //div//button[@data-testid="login-page-login-button"] -- локатор для кнопки Login
