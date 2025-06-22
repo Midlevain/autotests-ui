@@ -19,24 +19,8 @@ with sync_playwright() as playwright:
     registration_page_registration_button = page.get_by_test_id("registration-page-registration-button")
     registration_page_registration_button.click()
 
-    dashboard_drawer = page.get_by_test_id("dashboard-drawer-list-item-button")
-    expect(dashboard_drawer).to_be_visible()
-    expect(dashboard_drawer).to_have_text('Dashboard')
+    dashboard_toolbar = page.get_by_test_id("dashboard-toolbar-title-text")
+    expect(dashboard_toolbar).to_be_visible()
+    expect(dashboard_toolbar).to_have_text('Dashboard')
 
-    page.wait_for_timeout(5000)
-
-
-
-
-#Откроет страницу https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration
-#
-#Заполнит поле "Email" значением "user.name@gmail.com" :rh:
-#Заполнит поле "Username" значением "username" :ri:
-#Заполнит поле "Password" значением "password" :rj:
-#
-#Нажмет на кнопку "Registration". После нажатия кнопки "Registration" произойдет редирект на страницу "Dashboard"
-#
-#Проверит, что на странице "Dashboard" отображается заголовок "Dashboard"
-#
-#data-testid="dashboard-drawer-list-item-button"
-#python -m playwright_registration
+#22.06.2025\7:56\работает
