@@ -4,9 +4,12 @@ with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
 
-    page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration') #1
+    page.goto(
+        'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration',
+              wait_until='networkidle'
+    )
 
-    registration_button = page.get_by_test_id('registration-page-registration-button') #2
+    registration_button = page.get_by_test_id('registration-page-registration-button')
     expect(registration_button).to_be_disabled()
 
     email_input = page.get_by_test_id("registration-form-email-input").locator('input')
