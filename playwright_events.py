@@ -17,5 +17,3 @@ with sync_playwright() as playwright:
 
         page.on('request', log_request)
         page.on('response', log_response)
-
-        page.wait_for_timeout(5000)

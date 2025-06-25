@@ -11,8 +11,3 @@ with sync_playwright() as playwright:
 
     for char in 'user@gmail.com':
         page.keyboard.type(char, delay=300)
-
-
-
-    #python -m playwright_keyboard
-    #git add.  git status git commit -m "" git push
