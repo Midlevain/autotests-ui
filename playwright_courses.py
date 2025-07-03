@@ -19,7 +19,7 @@ with sync_playwright() as playwright:
     registration_page_registration_button = page.get_by_test_id("registration-page-registration-button")
     registration_page_registration_button.click()
 
-    context.storage_state(path='browser-state.json')
+    context.storage_state(path='tests/browser-state.json')
 
 with sync_playwright() as playwright:
          browser = playwright.chromium.launch(headless=False)
@@ -28,8 +28,8 @@ with sync_playwright() as playwright:
 
          page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
 
-         courses_list_tooldbar = page.get_by_test_id('courses-list-toolbar-title-text')
-         expect(courses_list_tooldbar).to_be_visible()
+         courses_list_toolbar = page.get_by_test_id('courses-list-toolbar-title-text')
+         expect(courses_list_toolbar).to_be_visible()
 
          courses_icon = page.get_by_test_id('courses-list-empty-view-icon')
          expect(courses_icon).to_be_visible()
