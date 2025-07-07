@@ -8,6 +8,7 @@ def chromium_page(playwright: Playwright) -> Page:
     yield browser.new_page()
     browser.close()
 
+
 @pytest.fixture(scope="session")
 def initialize_browser_state(playwright: Playwright):
     browser = playwright.chromium.launch(headless=False)
