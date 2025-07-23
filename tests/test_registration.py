@@ -1,23 +1,16 @@
 import pytest
-from playwright.sync_api import expect, Page
+
 from pages.registration_page import RegistrationPage
 from pages.dashboard_page import DashboardPage
 
 
 @pytest.mark.regression
 @pytest.mark.registration
-@pytest.mark.parametrize (
-        'email, username, password,',
-    [
-        ("user.name@gmail.com", "username", "password"),
-    ]
-)
-
-def test_successful_registration(registration_page: RegistrationPage, email: str, username: str, password: str):
+def test_successful_registration(registration_page: RegistrationPage,dashboard_page: DashboardPage):
         registration_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
-        registration_page.fill_registration_form(email=email, username=username, password=password)
+        registration_page.fill_registration_form(email="user.name@gmail.com",username="username",password="password")
         registration_page.click_registration_button()
-        dashboard_page.get_by_test_id('dashboard-toolbar-title-text')
+        dashboard_page.check_visible_dashboard_title()
 
         # email_input = chromium_page.get_by_test_id("registration-form-email-input").locator('input')
         # email_input.fill('user.name@gmail.com')
