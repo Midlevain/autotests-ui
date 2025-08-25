@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-from pages.base_pages import BasePage
+from pages.base_page import BasePage
 
 
 class RegistrationPage(BasePage):
