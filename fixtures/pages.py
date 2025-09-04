@@ -19,7 +19,6 @@ def registration_page(chromium_page: Page) -> RegistrationPage:
 def dashboard_page(chromium_page: Page) -> DashboardPage:
     return DashboardPage(page=chromium_page)
 
-
 @pytest.fixture
 def courses_list_page(chromium_page: Page) -> CoursesListPage:
     return CoursesListPage(page=chromium_page)
